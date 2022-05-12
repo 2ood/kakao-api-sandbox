@@ -13,7 +13,7 @@ const main_text_input = document.getElementById("main-text");
 
 const urlParams = new URLSearchParams(window.location.search);
 
-const REDIRECT_URI = window.location.href;
+const REDIRECT_URI = window.location.href.split("?")[0];
 let JAVASCRIPT_KEY = localStorage.getItem('JAVASCRIPT_KEY')!=null?localStorage.getItem('JAVASCRIPT_KEY'):'';
 let REST_KEY = localStorage.getItem('REST_KEY')!=null?localStorage.getItem('REST_KEY'):'';
 let ACCESS_TOKEN = localStorage.getItem('TOKEN')!=null?localStorage.getItem('TOKEN'):'';
@@ -69,8 +69,8 @@ function onSendToMyself() {
 function onGetToken() {
     let code = urlParams.get('code');
     let par = `grant_type=authorization_code&client_id=${REST_KEY}&redirectUri=${REDIRECT_URI}&code=${code}`;
-    var xmlHttp = new XMLHttpRequest();      
-    xmlHttp.onreadystatechange = function() { 
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
         if(this.status == 200 && this.readyState == this.DONE) {
             let res_json = JSON.parse(xmlHttp.responseText);
             setToken(res_json.access_token);
