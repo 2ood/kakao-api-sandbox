@@ -47,11 +47,11 @@ function onSendToMyself() {
         url: '/v2/api/talk/memo/default/send',
         data: {
         template_object: {
-            object_type: 'text',
-            text : main_text,
-            link : {
-                webURL : see_more_url,
-                mobileWebUrl : see_more_url
+            "object_type": 'text',
+            "text" : main_text+see_more_url,
+            "link" : {
+                "web_url" : see_more_url,
+                "mobile_web_url" : see_more_url
                 }
             }
         },
