@@ -50,8 +50,8 @@ function onSendToMyself() {
             object_type: 'text',
             text : main_text,
             link : {
-                web_url : see_more_url,
-                mobile_web_url : see_more_url
+                webURL : see_more_url,
+                mobileWebUrl : see_more_url
                 }
             }
         },
