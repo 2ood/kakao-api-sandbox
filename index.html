@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kakao api test</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <main>
+            <h1>Send Kakaotalk to Myself</h1>
+            <buttongroup>
+                <button type="button" id="login">LOGIN</button>
+                <button type="button" id="get-token">GET_TOKEN</button>
+            </buttongroup>
+            <conversation>
+                <message>
+                    <textarea id="main-text"></textarea>
+                    <input type="text" name="see-more-url" placeholder="see more url">
+                </message>
+            </conversation>
+            <button type="button" id="send-myself">SEND TO MYSELF</button>
+        </main>
+        <button type="button" id="more">
+            <span class="material-symbols-outlined" name="menu-icon">menu</span>
+            <span class="material-symbols-outlined" name="close-icon">close</span>
+        </button>
+        <nav>
+            <h3>API KEY 등록하기 / 바꾸기</h3>
+            <inputgroup>
+                <input type="text" name="javascript-key" placeholder="javascript key">
+                <input type="text" name="rest-key" placeholder="rest key">
+            </inputgroup>
+            <button type="button" id="save-input">save</button>
+        </nav>
+        <footer>
+            <a href="https://www.github.com/2ood/kakao-api-sandbox"><img src="img/GitHub-Mark-64px.png"></a>
+        </footer>
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+        <script src="kakao_script.js"></script>
+    </body>
+</html>
