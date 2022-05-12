@@ -44,11 +44,12 @@ function onSendToMyself() {
     loadInputs();
     alert(`sending ${main_text}\n ${see_more_url}`);
     Kakao.API.request({
-        url: '/v2/api/talk/memo/default/send',
+        url: '/v2/api/talk/memo/send',
         data: {
-        template_object: {
+          template_id : 76471,
+          template_object: {
             "object_type": 'text',
-            "text" : main_text+see_more_url,
+            "text" : main_text,
             "link" : {
                 "web_url" : see_more_url,
                 "mobile_web_url" : see_more_url
