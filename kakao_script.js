@@ -9,7 +9,7 @@ const save_input_button  = document.getElementById("save-input");
 const js_key_input = document.querySelector("input[name='javascript-key']");
 const rest_key_input = document.querySelector("input[name='rest-key']");
 const see_more_input = document.querySelector("input[name='see-more-url']");
-const main_text_input = document.getElementById("main-text");
+const main_text_input = document.querySelector("message.active textarea.main-text:first-of-type");
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -21,6 +21,8 @@ let ACCESS_TOKEN = localStorage.getItem('TOKEN')!=null?localStorage.getItem('TOK
 let main_text = '';
 let see_more_url = '';
 
+let sending_data = {};
+
 refreshKakao();
 
 function loadInputs() {
@@ -28,6 +30,10 @@ function loadInputs() {
     if(rest_key_input.value!="") REST_KEY = rest_key_input.value;
     see_more_url = (see_more_input.value==null)?"https://www.naver.com":see_more_input.value;
     main_text = main_text_input.value;
+
+    const selected_type = document.querySelector("typegroup type.active").getAttribute("name");
+
+
 }
 
 function refreshKakao() {
@@ -43,13 +49,13 @@ function onLogin() {
 function onSendToMyself() {
     loadInputs();
     alert(`sending ${main_text}\n ${see_more_url}`);
+
     Kakao.API.request({
         url: '/v2/api/talk/memo/send',
         data: {
           template_id : 76471,
           template_args: {
             "title" : main_text,
-            "desc" : "sample description",
             "button_name" : "press this button"
             }
         },

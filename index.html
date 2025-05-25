@@ -17,10 +17,24 @@
                 <button type="button" id="get-token">GET_TOKEN</button>
             </buttongroup>
             <conversation>
-                <message>
-                    <textarea id="main-text"></textarea>
-                    <input type="text" name="see-more-url" placeholder="see more url">
+              <typegroup>
+                <type name="text"></type>
+                <type name="text-desc"></type>
+                <type name="text-desc-button"></type>
+              </typegroup>
+                <message class="text">
+                    <textarea class="main-text"></textarea>
                 </message>
+                <message class="active text-desc">
+                  <textarea class="main-text"></textarea>
+                  <textarea class="desc-text"></textarea>
+                </message>
+                <message class="text-desc-button">
+                  <textarea class="main-text"></textarea>
+                  <textarea class="desc-text"></textarea>
+                  <input type="text" name="see-more-url" placeholder="see more url">
+                </message>
+
             </conversation>
             <button type="button" id="send-myself">SEND TO MYSELF</button>
         </main>
